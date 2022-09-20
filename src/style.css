@@ -1,0 +1,102 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --traffic-red: #b81d13;
+  --traffic-yellow: #efb700;
+  --traffic-green: #008450;
+
+  --red-bright: #ee4b2b;
+  --yellow-bright: #ffea00;
+  --green-bright: #90ee90;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+#Red-green-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 500px;
+}
+
+#Red-green-app .Light-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 150px;
+  height: 100%;
+  background-color: #1c1c1c;
+  padding: 10px;
+}
+
+.Light {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: darkgray;
+}
+
+.Light.Red {
+  background-color: var(--traffic-red);
+  opacity: 0.3;
+}
+
+.Light.Red.Active {
+  background-color: var(--red-bright);
+  opacity: 1;
+}
+
+.Light.Yellow {
+  background-color: var(--traffic-yellow);
+  opacity: 0.3;
+}
+
+.Light.Yellow.Active {
+  background-color: var(--yellow-bright);
+  opacity: 1;
+}
+
+.Light.Green {
+  background-color: var(--traffic-green);
+  opacity: 0.3;
+}
+
+.Light.Green.Active {
+  background-color: var(--green-bright);
+  opacity: 1;
+}

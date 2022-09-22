@@ -1,4 +1,4 @@
-import StopLight from "./stopLight";
+import stopLight from "./_stopLight";
 
 export function setupLight(el: HTMLDivElement) {
   const lightContainer = document.createElement("div");
@@ -13,13 +13,13 @@ export function setupLight(el: HTMLDivElement) {
   lightContainer.innerHTML = template;
 
   window.addEventListener("DOMContentLoaded", (_) => {
-    const stopLight = new StopLight();
-    stopLight.defaults = {
+    const trafficLight = stopLight.init();
+    trafficLight.defaults = {
       redDuration: 400,
       yellowDuration: 200,
       greenDuration: 100,
     };
-    stopLight.cycle(10);
+    trafficLight.cycle(10);
   });
 
   el.appendChild(lightContainer);

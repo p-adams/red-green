@@ -4,7 +4,7 @@ type Light = {
   duration: number;
 };
 
-type Durations = {
+export type Durations = {
   redDuration: number;
   yellowDuration: number;
   greenDuration: number;

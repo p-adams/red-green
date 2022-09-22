@@ -10,20 +10,25 @@ export type Durations = {
   greenDuration: number;
 };
 
-type StopLight = {
+export interface StopLight {
   lights: Light[];
   durations: Durations;
-  init: () => void;
+  lightState: (light: Light) => Promise<string>;
+  toggleActive: (
+    from: Element | null,
+    to: Element | null,
+    className?: string
+  ) => void;
   run: () => void;
   cycle: (times: number) => void;
   defaults: () => Durations;
-  lightState: (light: Light) => Promise<string>;
-  toggleActive: any;
-  addClass: any;
-  removeClass: any;
-};
+  addClass: (el: Element | null, className?: string) => void;
+  removeClass: (el: Element | null, className?: string) => void;
+}
 
-const StopLight: StopLight = {
+const StopLight: {
+  init: () => void;
+} & StopLight = {
   lights: [],
   durations: {
     redDuration: 1000,
